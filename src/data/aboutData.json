@@ -1,0 +1,153 @@
+{
+  "categories": [
+    {
+      "id": "leadership",
+      "label": "Leadership",
+      "sections": [
+        {
+          "sectionClass": "page-hero page-hero-about",
+          "heading": {
+            "format": "name-role-emphasis",
+            "roleLabel": "Founder",
+            "className": "about-heading"
+          },
+          "items": [
+            {
+              "name": "Shreeansh Agrawal",
+              "role": "Founder",
+              "image": "founder",
+              "linkedin": "https://www.linkedin.com/in/shreeansh-agrawal-67b398109/",
+              "layout": { "showName": false },
+              "text": [
+                "With over 5 years of experience delivering bespoke AI/ML solutions across sectors, including energy, climate, aviation, healthcare, and telecom, Shreeansh brings deep technical insight combined with strategic vision. Shreeansh graduated summa cum laude from Amherst College with a degree in Mathematics and obtained a dual MBA/MS at MIT Sloan and MIT's School of Engineering. He has previously served as an economic consultant at The Brattle Group, specializing in decarbonization modeling and investment strategy. He also worked to build ML solutions for climate mitigation and churn forecasting at Verizon.",
+                "Passionate about solving real-world problems through AI, Shreeansh has worked with stakeholders around the globe, deploying tailored machine learning systems that drive impact. His approach blends rigorous analytical thinking with cross-industry domain expertise—delivering outcomes that are both innovative and grounded in practical value."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "partners",
+      "label": "Partners",
+      "sections": [
+        {
+          "sectionClass": "section section-dark",
+          "heading": {
+            "text": "Our Partners",
+            "className": "about-heading about-heading-italic"
+          },
+          "items": [
+            {
+              "name": "Bibek Raj Kandel",
+              "role": "Advisor",
+              "image": "bibek",
+              "layout": { "reverse": true },
+              "text": [
+                "Bibek Raj Kandel is a strategic advisor and energy policy expert with over 15 years of experience working on energy transition, utilities reform, infrastructure development, and climate resilience in frontier and emerging markets. He advises governments, multilateral institutions, and private sector partners—including UNDP, the World Bank, IRENA, and Enabel—on energy policy, utility transformation, and investment strategies in complex power markets. Bibek combines engineering expertise with political economy insight to navigate the institutional and market challenges of the energy transition. His work spans national utilities, regulatory reform, and infrastructure development across Nepal, East Africa, and Asia, including advisory engagements in Malaysia, Indonesia, and China, as well as remote advisory support to Pacific Island states on energy transition planning. He has led major initiatives around grid strengthening and electricity markets in Rwanda, as well as designing a multi-million Euro climate-resilient infrastructure program in Mozambique following Cyclone Idai.",
+                "Bibek serves on the boards of Bhutan Global Group and Canopy USA, as well as serving as an Asia Global Fellow at the Asia Global Institute at the University of Hong Kong. A graduate of Harvard Kennedy School and the University of Twente, he writes frequently on energy geopolitics and development."
+              ]
+            }
+          ]
+        },
+        {
+          "sectionClass": "section section-navy",
+          "items": [
+            {
+              "name": "Prijesh Sharma",
+              "role": "COO",
+              "image": "prijesh",
+              "layout": { "preline": true },
+              "text": [
+                "A Data Scientist, AI Engineer, and Software Developer with over three years of experience in building data-driven solutions and intelligent systems. Skilled in machine learning, artificial intelligence, data analytics, and full-stack development. Holds an MSc in Information Technology and Applied Security and a BSc (Hons) in Computing from Islington College under London Metropolitan University.\n\nExperienced in developing end-to-end solutions, including stock market prediction models, recommendation systems, school management platforms, and data analytics applications. Recognized for strong analytical thinking, problem-solving skills, and the ability to design scalable and impactful technology solutions."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "label": "Team",
+      "sections": [
+        {
+          "sectionClass": "section section-dark",
+          "heading": {
+            "text": "Our Team",
+            "className": "about-heading"
+          },
+          "groups": [
+            {
+              "layout": "profile",
+              "items": [
+                {
+                  "name": "Khem Raj Khadka",
+                  "role": "Project Manager",
+                  "image": "khem",
+                  "portraitShape": "square",
+                  "text": [
+                    "A Project Manager with a Bachelor of Science in Computer Science from Global College, London University, he specializes in steering technical teams toward high-impact delivery. He bridges the gap between complex software architecture and business objectives, utilizing Agile methodologies to streamline product roadmaps and optimize team performance. Passionate about operational excellence, he is dedicated to transforming strategic visions into scalable, real-world solutions."
+                  ]
+                },
+                {
+                  "name": "Diwas Kunwar",
+                  "role": "Senior AI Engineer",
+                  "image": "diwas",
+                  "portraitShape": "square",
+                  "portfolio": "https://diwaskunwar.info.np/",
+                  "text": [
+                    "AI/ML Engineer specializing in Generative AI and Large Language Models (LLMs), focused on building scalable, production-ready intelligent systems. Work includes model development, fine-tuning, and optimization for real-world use cases, along with the design of Agentic RAG pipelines and multi-agent systems.",
+                    "Experience spans building agent architectures using frameworks such as LangChain and LangGraph for structured orchestration, alongside autonomous agent systems like Hermes Agent and Claude Code to enable persistent memory, tool use, and long-running, self-directed workflows. Systems are designed to support reliable reasoning and adaptability in real-world environments.",
+                    "With a strong foundation in backend engineering and system design, work involves developing and deploying end-to-end AI systems—covering data flow, model serving, and scaling in production. Machine learning is integrated into high-performance applications using PyTorch, Hugging Face, FastAPI, and modern cloud infrastructure, with a focus on efficiency, scalability, and impactful solutions."
+                  ],
+                  "links": {
+                    "LinkedIn": "https://www.linkedin.com/in/diwas-kunwar/",
+                    "Hugging Face": "https://huggingface.co/diwaskunwar10",
+                    "GitHub": "https://github.com/diwaskunwar"
+                  }
+                }
+              ]
+            },
+            {
+              "layout": "card-grid",
+              "heading": {
+                "text": "Junior Analysts",
+                "className": "about-team-subheading"
+              },
+              "items": [
+                {
+                  "name": "Sagar Budal",
+                  "role": "Junior Analyst",
+                  "image": "sagar",
+                  "portraitShape": "square",
+                  "text": [
+                    "An ACCA student at the Certified College of Accountancy with a strong foundation in finance, data annotation, holds a Diploma in Computer Applications and has experience in computer teaching, video editing, and research. Passionate about leveraging technology and finance to drive impactful solutions and continuously expand my expertise."
+                  ]
+                },
+                {
+                  "name": "Roshan Khatiwada",
+                  "role": "Junior Analyst",
+                  "image": "roshan",
+                  "portraitShape": "square",
+                  "portfolio": "https://roshankhatiwada.vercel.app/",
+                  "text": [
+                    "A Computer Engineering student interested in Data Science and Artificial Intelligence, with experience in web development, teaching, and network operations. Skilled in React, PHP, and frontend design, with a strong focus on building user-friendly applications. Detail-oriented, adaptable, and eager to grow and contribute in modern technologies."
+                  ]
+                },
+                {
+                  "name": "Bishal Saud",
+                  "role": "Junior Analyst",
+                  "image": "bishal",
+                  "portraitShape": "square",
+                  "text": [
+                    "A Computer Engineering student with experience in web development, data annotation, and project development. Skilled in React.js, Tailwind CSS, HTML, and CSS. Passionate about learning new technologies, solving problems, and creating innovative solutions in the tech industry."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
