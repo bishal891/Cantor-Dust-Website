@@ -23,32 +23,28 @@ export default function Home() {
       <section className="section section-dark">
         <div className="container">
           <div className="two-col fade-up">
-            <div className="col-img">
-              <img
-                src={media.homeWhoWeAre}
-                alt="Who We Are"
-                style={{
-                  borderRadius: 'var(--radius)',
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block',
-                }}
-              />
+            <div className="col-img home-who-we-are-media">
+              <div className="home-video-wrap">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  poster={media.homeWhoWeArePoster}
+                  src={media.homeWhoWeAreVideo}
+                  aria-label="Who We Are — Cantor Dust overview video"
+                >
+                  <track kind="captions" />
+                </video>
+              </div>
             </div>
-            <div className="col-text" style={{ textAlign: 'left' }}>
-              <h2
-                style={{
-                  fontSize: '2.5rem',
-                  marginBottom: '1.5rem',
-                  fontFamily: 'var(--font-heading)',
-                }}
-              >
-                Who We Are
-              </h2>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '1.1rem' }}>
-                &ldquo;At Cantor Dust, our team of experts helps organizations solve complex
-                operational and analytical challenges across Energy, Healthcare, Manufacturing,
-                and Physical AI.&rdquo;
+            <div className="col-text">
+              <h2 className="section-title col-section-title">Who We Are</h2>
+              <p className="card-text">
+                At Cantor Dust, our team of experts helps organizations solve complex operational
+                and analytical challenges across energy and climate, healthcare, manufacturing,
+                and Physical AI.
               </p>
             </div>
           </div>
@@ -57,38 +53,18 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2
-              style={{
-                fontSize: '2.5rem',
-                marginBottom: '1rem',
-                fontFamily: 'var(--font-heading)',
-              }}
-            >
-              How We Work
-            </h2>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem' }}>
-              We make sure you get what you need!
-            </p>
-          </div>
+          <h2 className="section-title">How We Work</h2>
+          <p className="section-subtitle">We make sure you get what you need.</p>
 
           <div className="steps-grid">
             {howWeWorkSteps.map((step, index) => (
               <article
                 key={step.title}
                 className="step-card fade-up"
-                style={{
-                  animationDelay: `${index * 0.12}s`,
-                  background: 'transparent',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: 'var(--radius)',
-                  padding: '3rem 2rem',
-                }}
+                style={{ animationDelay: `${index * 0.12}s` }}
               >
-                <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', fontStyle: 'italic' }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>{step.text}</p>
+                <h3 className="card-title card-title--italic">{step.title}</h3>
+                <p className="card-text">{step.text}</p>
               </article>
             ))}
           </div>
@@ -102,16 +78,16 @@ export default function Home() {
 
         <div className="logo-grid-section">
           <div className="container">
-            <h3>Private Sectors</h3>
+            <h3>Private Sector</h3>
           </div>
-          <LogoMarquee logos={privateSectorLogos} duration={36} />
+          <LogoMarquee logos={privateSectorLogos} duration={36} direction="left" />
         </div>
 
         <div className="logo-grid-section">
           <div className="container">
-            <h3>Development Works</h3>
+            <h3>Development Sector</h3>
           </div>
-          <LogoMarquee logos={developmentLogos} duration={40} />
+          <LogoMarquee logos={developmentLogos} duration={28} direction="right" />
         </div>
       </section>
     </>

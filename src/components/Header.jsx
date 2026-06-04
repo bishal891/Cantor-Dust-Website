@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { navLinks, contact } from '../data/siteData';
+import { navLinks } from '../data/siteData';
 import { media } from '../data/wixMedia';
 
 export default function Header() {
@@ -27,25 +27,27 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <div className="header-bar">
-        <Link to="/" className="logo-link" onClick={closeMenu}>
-          <img src={media.logo} alt="Cantor Dust" className="logo" />
+      <div className="header-top-bar">
+        <Link to="/" className="header-brand" onClick={closeMenu}>
+          <img src={media.logo} alt="Cantor Dust" className="header-brand-logo" />
         </Link>
-
-        <button
-          type="button"
-          className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
-          aria-expanded={menuOpen}
-          aria-controls="site-nav"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="menu-toggle-bars" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
-        </button>
+        <div className="header-menu-slot">
+          <button
+            type="button"
+            className={`menu-pill ${menuOpen ? 'is-open' : ''}`}
+            aria-expanded={menuOpen}
+            aria-controls="site-nav"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="menu-pill-icon" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+            <span className="menu-pill-label">Menu</span>
+          </button>
+        </div>
       </div>
 
       <button
@@ -65,21 +67,27 @@ export default function Header() {
           {navLinks.map((link) =>
             link.children ? (
               <li key={link.label} className="nav-item has-dropdown">
-                <button
-                  type="button"
-                  className={`nav-dropdown-trigger ${servicesOpen ? 'is-open' : ''}`}
-                  aria-expanded={servicesOpen}
-                  onClick={() => setServicesOpen((open) => !open)}
-                >
-                  {link.label}
-                  <span className="nav-chevron" aria-hidden="true" />
-                </button>
+                <div className="nav-dropdown-row">
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `nav-dropdown-link${isActive ? ' active' : ''}`
+                    }
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </NavLink>
+                  <button
+                    type="button"
+                    className={`nav-dropdown-toggle ${servicesOpen ? 'is-open' : ''}`}
+                    aria-expanded={servicesOpen}
+                    aria-label={`${servicesOpen ? 'Collapse' : 'Expand'} ${link.label} submenu`}
+                    onClick={() => setServicesOpen((open) => !open)}
+                  >
+                    <span className="nav-chevron" aria-hidden="true" />
+                  </button>
+                </div>
                 <ul className={`dropdown ${servicesOpen ? 'show' : ''}`}>
-                  <li>
-                    <NavLink to={link.path} onClick={closeMenu}>
-                      All Services
-                    </NavLink>
-                  </li>
                   {link.children.map((child) => (
                     <li key={child.path}>
                       <NavLink to={child.path} onClick={closeMenu}>
@@ -102,15 +110,7 @@ export default function Header() {
               </li>
             ),
           )}
-          <li className="nav-item">
-            <a href={`mailto:${contact.email}`} className="nav-contact-link" onClick={closeMenu}>
-              Contact
-            </a>
-          </li>
         </ul>
-        <a href={`mailto:${contact.email}`} className="nav-panel-contact" onClick={closeMenu}>
-          {contact.email}
-        </a>
       </nav>
     </header>
   );
