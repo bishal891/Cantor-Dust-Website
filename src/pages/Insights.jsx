@@ -1,3 +1,4 @@
+import BoxImage from '../components/BoxImage';
 import { insights } from '../data/siteData';
 
 export default function Insights() {
@@ -24,7 +25,7 @@ export default function Insights() {
               >
                 <a href={item.href} target="_blank" rel="noopener noreferrer">
                   <div className="insight-image">
-                    <img src={item.image} alt={item.title} loading="lazy" />
+                    <BoxImage src={item.image} alt={item.title} loading="lazy" />
                   </div>
                   <h3 className="insight-card-title">{item.title}</h3>
                 </a>

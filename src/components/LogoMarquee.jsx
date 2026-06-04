@@ -1,3 +1,5 @@
+import BoxImage from './BoxImage';
+
 export default function LogoMarquee({ logos, duration = 32, direction = 'left' }) {
   if (!logos?.length) return null;
 
@@ -12,7 +14,13 @@ export default function LogoMarquee({ logos, duration = 32, direction = 'left' }
       <div className="logo-marquee-track">
         {track.map((logo, index) => (
           <div key={`${logo}-${index}`} className="logo-marquee-item">
-            <img src={logo} alt="" loading="lazy" draggable="false" />
+            <BoxImage
+              src={logo}
+              alt=""
+              loading="lazy"
+              draggable="false"
+              wrapperClassName="box-image--logo"
+            />
           </div>
         ))}
       </div>

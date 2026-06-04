@@ -396,10 +396,15 @@ body.nav-open {
 
 .dropdown a {
   display: block;
-  padding: 0.75rem 0 0.75rem 1rem;
+  margin-left: 0.625rem;
+  padding: 0.75rem 0 0.75rem 1.25rem;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   border-left: 2px solid rgba(155, 189, 255, 0.25);
+}
+
+.dropdown a.active::after {
+  left: 0.625rem;
 }
 
 .dropdown a:hover {
@@ -1587,15 +1592,14 @@ body.nav-open {
 
 .physical-example-media {
   width: 100%;
-  border-radius: var(--radius);
+  border-radius: 16px;
   overflow: visible;
   box-shadow: var(--shadow);
   background: rgba(15, 12, 40, 0.5);
   border: 1px solid var(--color-border);
 }
 
-.physical-intro-media img,
-.physical-example-media img {
+.physical-intro-media img {
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -1603,6 +1607,31 @@ body.nav-open {
   object-fit: contain;
   object-position: center;
   border-radius: var(--radius);
+}
+
+.physical-example-media img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .physical-example-media .box-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .physical-example-media img {
+    height: auto;
+    transform: scale(1.12);
+    transform-origin: center center;
+  }
 }
 
 .physical-section-title {
@@ -2044,6 +2073,96 @@ body.nav-open {
   }
 }
 
+/* Box images — subtle load placeholder + fade-in */
+.box-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.box-image__shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(155, 189, 255, 0.04) 0%,
+    rgba(155, 189, 255, 0.12) 45%,
+    rgba(155, 189, 255, 0.04) 90%
+  );
+  background-size: 220% 100%;
+  animation: boxImageShimmer 1.5s ease-in-out infinite;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.insight-image .box-image__shimmer {
+  background: linear-gradient(
+    105deg,
+    rgba(47, 53, 108, 0.06) 0%,
+    rgba(47, 53, 108, 0.14) 45%,
+    rgba(47, 53, 108, 0.06) 90%
+  );
+  background-size: 220% 100%;
+}
+
+.box-image img {
+  position: relative;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.box-image--loaded .box-image__shimmer {
+  opacity: 0;
+}
+
+.box-image--loaded img {
+  opacity: 1;
+}
+
+.insight-image .box-image,
+.profile-photo-frame > .box-image,
+.profile-photo-link.profile-photo-frame > .box-image {
+  height: 100%;
+  min-height: 100%;
+}
+
+.box-image--logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--logo-slot-width, 180px);
+  height: var(--logo-slot-height, 72px);
+}
+
+@keyframes boxImageShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box-image__shimmer {
+    animation: none;
+    opacity: 0.5;
+  }
+
+  .box-image img {
+    transition: none;
+  }
+
+  .box-image--loaded img {
+    opacity: 1;
+  }
+}
+
 /* Header & layout — device breakpoints */
 /* Phone (portrait) */
 @media (max-width: 480px) {
@@ -2073,6 +2192,15 @@ body.nav-open {
 
   .nav-dropdown-toggle {
     width: 2.5rem;
+  }
+
+  .dropdown a {
+    margin-left: 0.75rem;
+    padding-left: 1.125rem;
+  }
+
+  .dropdown a.active::after {
+    left: 0.75rem;
   }
 }
 

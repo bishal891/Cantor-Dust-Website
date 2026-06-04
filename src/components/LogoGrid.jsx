@@ -1,3 +1,5 @@
+import BoxImage from './BoxImage';
+
 export default function LogoGrid({ logos }) {
   if (!logos?.length) return null;
 
@@ -5,7 +7,7 @@ export default function LogoGrid({ logos }) {
     <div className="logo-grid">
       {logos.map((logo, index) => (
         <div key={logo || index} className="logo-cell">
-          <img src={logo} alt="" loading="lazy" />
+          <BoxImage src={logo} alt="" loading="lazy" wrapperClassName="box-image--logo" />
         </div>
       ))}
     </div>

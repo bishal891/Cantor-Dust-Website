@@ -1,3 +1,4 @@
+import BoxImage from '../components/BoxImage';
 import { aboutCategories } from '../data/aboutData';
 
 function ProfileLinkButtons({ linkButtons, className = '' }) {
@@ -58,7 +59,7 @@ function ProfileMediaActions({ person }) {
 }
 
 function ProfilePhoto({ person }) {
-  const photo = <img src={person.image} alt={person.name} loading="lazy" />;
+  const photo = <BoxImage src={person.image} alt={person.name} loading="lazy" />;
 
   return (
     <div className="profile-photo-wrap">

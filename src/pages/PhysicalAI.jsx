@@ -1,3 +1,4 @@
+import BoxImage from '../components/BoxImage';
 import SectionHeading from '../components/SectionHeading';
 import { annotationSteps, physicalAiIntro } from '../data/siteData';
 import { media } from '../data/wixMedia';
@@ -31,7 +32,7 @@ export default function PhysicalAI() {
           <div className="physical-intro-layout">
             <p className="physical-intro-text fade-up">{physicalAiIntro}</p>
             <div className="physical-intro-media fade-up delay-1">
-              <img
+              <BoxImage
                 src={media.physicalAnnotation}
                 alt="Annotation workflow"
                 loading="eager"
@@ -80,7 +81,7 @@ export default function PhysicalAI() {
         <div className="container">
           <h2 className="physical-section-title fade-up">Annotation Example</h2>
           <div className="physical-example-media fade-up delay-1">
-            <img
+            <BoxImage
               src={media.physicalAnnotationExample}
               alt="Annotation example diagram"
               loading="lazy"
