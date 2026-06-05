@@ -7,6 +7,7 @@ import { media } from '../data/wixMedia';
 const physicalImageUrls = [
   media.physicalAnnotation,
   media.physicalAnnotationExample,
+  media.physicalExampleVideoPoster,
 ];
 
 const annotationIcons = [
@@ -95,6 +96,7 @@ export default function PhysicalAI() {
               controls
               playsInline
               preload="metadata"
+              poster={media.physicalExampleVideoPoster}
               src={media.physicalExampleVideo}
             >
               <track kind="captions" />

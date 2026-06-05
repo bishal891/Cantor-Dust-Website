@@ -1652,7 +1652,10 @@ body.nav-open {
   width: 100%;
   height: auto;
   display: block;
-  background: #000;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  background: rgba(15, 12, 40, 0.8);
 }
 
 .annotation-card-icon {

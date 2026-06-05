@@ -44,4 +44,5 @@ export const media = {
   physicalAnnotation: asset('physical/annotation.jpg'),
   physicalAnnotationExample: asset('physical/annotation-example.jpg'),
   physicalExampleVideo: asset('physical/example.mp4'),
+  physicalExampleVideoPoster: asset('physical/example-poster.jpg'),
 };

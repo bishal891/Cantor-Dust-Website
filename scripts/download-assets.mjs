@@ -103,6 +103,14 @@ const assets = [
   },
   { rel: 'physical/example.mp4', url: wixVideo('ae9864_d60dc6280b7741ffb6c49916bacaf5e4') },
   {
+    rel: 'physical/example-poster.jpg',
+    url: wixImage(
+      'ae9864_d60dc6280b7741ffb6c49916bacaf5e4f000.jpg',
+      'ae9864_d60dc6280b7741ffb6c49916bacaf5e4f000.jpg',
+      1100,
+    ),
+  },
+  {
     rel: 'insights/hydropower-compute.pdf',
     url: 'https://www.cantordust.org/_files/ugd/305fe7_4093eed7dd2a4c379dcc270cee15a6f7.pdf',
   },
