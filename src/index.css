@@ -1571,9 +1571,13 @@ body.nav-open {
   line-height: 1.85;
 }
 
-.physical-intro-media {
+.physical-intro-visual {
   flex: 1;
   min-width: 0;
+  width: 100%;
+}
+
+.physical-intro-media {
   width: 100%;
   border-radius: var(--radius);
   overflow: visible;
@@ -1585,9 +1589,29 @@ body.nav-open {
 @media (min-width: 900px) {
   .physical-intro-layout {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-stack-lg);
   }
+
+  .physical-intro-text,
+  .physical-intro-visual {
+    flex: 1 1 50%;
+    align-self: center;
+  }
+
+  .physical-intro-visual {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+  }
+
+  .physical-intro-visual .annotation-example-table--intro {
+    width: 100%;
+  }
+}
+
+.physical-example-content {
+  width: 100%;
 }
 
 .physical-example-media {
@@ -1597,6 +1621,269 @@ body.nav-open {
   box-shadow: var(--shadow);
   background: rgba(15, 12, 40, 0.5);
   border: 1px solid var(--color-border);
+}
+
+.annotation-example-table {
+  display: none;
+}
+
+.annotation-example-table__panel {
+  --annotation-header-soft: rgba(142, 192, 239, 0.36);
+  --annotation-sn-soft: rgba(142, 192, 239, 0.32);
+  --annotation-time-soft: rgba(90, 74, 120, 0.44);
+  --annotation-description-soft: rgba(61, 122, 98, 0.42);
+  width: 100%;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(11, 26, 51, 0.5);
+  border: 1px solid rgba(142, 192, 239, 0.22);
+  box-shadow: none;
+}
+
+.annotation-example-table__header,
+.annotation-example-table__row {
+  display: grid;
+  grid-template-columns: 5.5rem 8.5rem 8.5rem minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0;
+}
+
+.annotation-example-table__header {
+  margin-bottom: 1.25rem;
+}
+
+.annotation-example-table__row + .annotation-example-table__row {
+  margin-top: 1rem;
+}
+
+.annotation-example-table__cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.1rem;
+}
+
+.annotation-example-table__cell:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0.35rem;
+  right: 0;
+  width: 1px;
+  height: calc(100% - 0.7rem);
+  background: rgba(155, 189, 255, 0.18);
+}
+
+.annotation-example-table__cell--description {
+  justify-content: stretch;
+}
+
+.annotation-example-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.annotation-example-pill--header {
+  width: 100%;
+  max-width: 6.5rem;
+  min-height: 2.65rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--annotation-header-soft);
+  box-shadow: none;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.annotation-example-table__cell--description .annotation-example-pill--header {
+  max-width: none;
+}
+
+.annotation-example-pill--sn {
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 50%;
+  background: var(--annotation-sn-soft);
+  box-shadow: none;
+  font-size: 1rem;
+}
+
+.annotation-example-pill--time {
+  width: 100%;
+  max-width: 6.75rem;
+  min-height: 2.65rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: var(--annotation-time-soft);
+  box-shadow: none;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+.annotation-example-pill--description {
+  width: 100%;
+  max-width: none;
+  min-height: 2.65rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  background: var(--annotation-description-soft);
+  box-shadow: none;
+  font-size: 0.92rem;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.annotation-example-table--example .annotation-example-table__header,
+.annotation-example-table--example .annotation-example-table__row {
+  width: 100%;
+  grid-template-columns: minmax(4.5rem, 0.7fr) minmax(6.5rem, 1fr) minmax(6.5rem, 1fr) minmax(0, 2.8fr);
+}
+
+.annotation-example-table--example .annotation-example-pill--time {
+  max-width: none;
+}
+
+.annotation-example-table--intro {
+  width: 100%;
+}
+
+.annotation-example-table--intro .annotation-example-table__panel {
+  width: 100%;
+  padding: 1rem 0.85rem 0.85rem;
+  background: rgba(11, 26, 51, 0.45);
+}
+
+.annotation-example-table--intro .annotation-example-table__header,
+.annotation-example-table--intro .annotation-example-table__row {
+  width: 100%;
+  grid-template-columns: minmax(3rem, 0.55fr) minmax(4.25rem, 0.75fr) minmax(4.25rem, 0.75fr) minmax(
+      0,
+      2.5fr
+    );
+}
+
+.annotation-example-table--intro .annotation-example-table__header {
+  margin-bottom: 0.75rem;
+}
+
+.annotation-example-table--intro .annotation-example-table__cell {
+  padding: 0 0.5rem;
+  min-height: 2rem;
+}
+
+.annotation-example-table--intro .annotation-example-table__cell:not(:last-child)::after {
+  background: rgba(155, 189, 255, 0.16);
+}
+
+.annotation-example-table--intro .annotation-example-table__row + .annotation-example-table__row {
+  margin-top: 0.55rem;
+}
+
+.annotation-example-table--intro .annotation-example-pill {
+  font-weight: 500;
+}
+
+.annotation-example-table--intro .annotation-example-pill--header {
+  width: 100%;
+  max-width: 4.5rem;
+  min-height: 1.85rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  background: var(--annotation-header-soft);
+  color: #fff;
+  box-shadow: none;
+}
+
+.annotation-example-table--intro
+  .annotation-example-table__cell--description
+  .annotation-example-pill--header {
+  max-width: none;
+}
+
+.annotation-example-table--intro .annotation-example-pill--sn {
+  width: 1.85rem;
+  height: 1.85rem;
+  min-height: 1.85rem;
+  font-size: 0.68rem;
+  background: var(--annotation-sn-soft);
+  color: #fff;
+  box-shadow: none;
+}
+
+.annotation-example-table--intro .annotation-example-pill--time {
+  width: 100%;
+  max-width: none;
+  min-height: 1.85rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  background: var(--annotation-time-soft);
+  color: rgba(255, 255, 255, 0.95);
+  box-shadow: none;
+}
+
+.annotation-example-table--intro .annotation-example-pill--description {
+  width: 100%;
+  max-width: none;
+  min-height: 1.85rem;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.64rem;
+  font-weight: 400;
+  line-height: 1.35;
+  background: var(--annotation-description-soft);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: none;
+}
+
+@media (min-width: 769px) {
+  .physical-example-media--mobile {
+    display: none;
+  }
+
+  .annotation-example-table--example {
+    display: block;
+  }
+}
+
+@media (min-width: 900px) {
+  .physical-intro-media--mobile {
+    display: none;
+  }
+
+  .annotation-example-table--intro {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .physical-intro-media--mobile {
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .physical-intro-media--mobile .box-image {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .physical-intro-media--mobile img {
+    width: 100%;
+    height: auto;
+    transform: none;
+    border-radius: 0;
+    object-fit: contain;
+    object-position: center;
+  }
 }
 
 .physical-intro-media img {
@@ -1620,17 +1907,30 @@ body.nav-open {
 }
 
 @media (max-width: 768px) {
-  .physical-example-media .box-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
+  .physical-video-wrap,
+  .physical-example-media--mobile {
+    width: 100%;
+    margin-inline: auto;
+    border-radius: var(--radius);
   }
 
-  .physical-example-media img {
+  .physical-example-media--mobile {
+    overflow: hidden;
+  }
+
+  .physical-example-media--mobile .box-image {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .physical-example-media--mobile img {
+    width: 100%;
     height: auto;
-    transform: scale(1.12);
-    transform-origin: center center;
+    transform: none;
+    border-radius: 0;
+    object-fit: contain;
+    object-position: center;
   }
 }
 

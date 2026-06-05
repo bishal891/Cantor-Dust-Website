@@ -53,6 +53,72 @@ export const howWeWorkSteps = [
 export const physicalAiIntro =
   'We build reliable datasets from real-world industrial environments to support robotics and embodied AI. By collecting extensive video and sensor data from industrial settings, we enable training of models that understand and operate in complex physical environments. Our curated data ensures accuracy, consistency, and scalability — helping AI systems perceive, adapt, and perform tasks safely in dynamic conditions.';
 
+export const physicalIntroAnnotationRows = [
+  {
+    sn: 1,
+    start: '00:00',
+    end: '00:01',
+    description: 'Left hand grabs the football on the ground.',
+  },
+  {
+    sn: 2,
+    start: '00:01',
+    end: '00:02',
+    description: 'Right hand grabs the football on the ground.',
+  },
+  {
+    sn: 3,
+    start: '00:02',
+    end: '00:03',
+    description: 'Both hands pick up the football from the ground.',
+  },
+  {
+    sn: 4,
+    start: '00:03',
+    end: '00:04',
+    description: 'Both hands release the football on the ground.',
+  },
+  {
+    sn: 5,
+    start: '00:04',
+    end: '00:05',
+    description: 'Right leg move towards the football on the ground.',
+  },
+];
+
+export const annotationExampleRows = [
+  {
+    sn: 1,
+    start: '00:00.00',
+    end: '00:00.37',
+    description: 'Left hand picks up the tweezers from the laboratory bench.',
+  },
+  {
+    sn: 2,
+    start: '00:00.37',
+    end: '00:00.99',
+    description: 'Left hand places the tweezer on the laboratory bench.',
+  },
+  {
+    sn: 3,
+    start: '00:00.99',
+    end: '00:01.81',
+    description: 'Right hand grasps the tweezer on the laboratory bench.',
+  },
+  {
+    sn: 4,
+    start: '00:01.81',
+    end: '00:02.08',
+    description: 'Right hand picks up the tweezer from the laboratory bench.',
+  },
+  {
+    sn: 5,
+    start: '00:02.08',
+    end: '00:03.16',
+    description: 'Right hand tweezes the filter paper into the glass pot.',
+  },
+];
+
 export const annotationSteps = [
   {
     title: 'Video Segmentation',

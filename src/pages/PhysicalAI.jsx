@@ -1,7 +1,12 @@
 import { useEffect } from 'react';
+import AnnotationExampleTable from '../components/AnnotationExampleTable';
 import BoxImage from '../components/BoxImage';
 import SectionHeading from '../components/SectionHeading';
-import { annotationSteps, physicalAiIntro } from '../data/siteData';
+import {
+  annotationSteps,
+  physicalAiIntro,
+  physicalIntroAnnotationRows,
+} from '../data/siteData';
 import { media } from '../data/wixMedia';
 
 const physicalImageUrls = [
@@ -58,11 +63,18 @@ export default function PhysicalAI() {
         <div className="container">
           <div className="physical-intro-layout">
             <p className="physical-intro-text fade-up">{physicalAiIntro}</p>
-            <div className="physical-intro-media fade-up delay-1">
-              <BoxImage
-                src={media.physicalAnnotation}
-                alt="Annotation workflow"
-                priority
+            <div className="physical-intro-visual fade-up delay-1">
+              <div className="physical-intro-media physical-intro-media--mobile">
+                <BoxImage
+                  src={media.physicalAnnotation}
+                  alt="Annotation workflow"
+                  priority
+                />
+              </div>
+              <AnnotationExampleTable
+                rows={physicalIntroAnnotationRows}
+                variant="intro"
+                ariaLabel="Annotation workflow example"
               />
             </div>
           </div>
@@ -108,12 +120,15 @@ export default function PhysicalAI() {
       <section className="section section-gradient physical-example">
         <div className="container">
           <h2 className="physical-section-title fade-up">Annotation Example</h2>
-          <div className="physical-example-media fade-up">
-            <BoxImage
-              src={media.physicalAnnotationExample}
-              alt="Annotation example diagram"
-              priority
-            />
+          <div className="physical-example-content fade-up">
+            <div className="physical-example-media physical-example-media--mobile">
+              <BoxImage
+                src={media.physicalAnnotationExample}
+                alt="Annotation example diagram"
+                priority
+              />
+            </div>
+            <AnnotationExampleTable variant="example" />
           </div>
         </div>
       </section>
