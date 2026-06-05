@@ -120,7 +120,7 @@ main {
 /* Header — logo + menu on one row; menu stays fixed while scrolling */
 .site-header {
   position: relative;
-  z-index: 1000;
+  z-index: 10000;
   background: transparent;
   border: none;
   pointer-events: none;
@@ -155,7 +155,7 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1001;
+  z-index: 10002;
   height: var(--logo-block-height);
   display: flex;
   align-items: center;
@@ -168,6 +168,7 @@ main {
 
 .menu-pill {
   position: relative;
+  z-index: 10003;
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -234,7 +235,7 @@ main {
 .nav-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 998;
+  z-index: 10000;
   border: none;
   padding: 0;
   margin: 0;
@@ -260,7 +261,7 @@ body.nav-open {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 999;
+  z-index: 10001;
   width: min(320px, 100vw);
   height: 100dvh;
   max-height: 100dvh;
