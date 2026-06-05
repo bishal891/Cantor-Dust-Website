@@ -3,13 +3,15 @@ import { useEffect, useRef, useState } from 'react';
 export default function BoxImage({
   src,
   alt = '',
-  loading = 'lazy',
+  loading,
+  priority = false,
   className = '',
   wrapperClassName = '',
   ...imgProps
 }) {
   const imgRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
+  const resolvedLoading = loading ?? (priority ? 'eager' : 'lazy');
 
   useEffect(() => {
     setLoaded(false);
@@ -24,15 +26,17 @@ export default function BoxImage({
   return (
     <div
       className={`box-image${loaded ? ' box-image--loaded' : ''}${
-        wrapperClassName ? ` ${wrapperClassName}` : ''
-      }`}
+        priority ? ' box-image--priority' : ''
+      }${wrapperClassName ? ` ${wrapperClassName}` : ''}`}
     >
-      <span className="box-image__shimmer" aria-hidden="true" />
+      {!priority ? <span className="box-image__shimmer" aria-hidden="true" /> : null}
       <img
         ref={imgRef}
         src={src}
         alt={alt}
-        loading={loading}
+        loading={resolvedLoading}
+        fetchPriority={priority ? 'high' : undefined}
+        decoding="async"
         className={className || undefined}
         onLoad={markLoaded}
         onError={markLoaded}

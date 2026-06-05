@@ -2124,6 +2124,14 @@ body.nav-open {
   opacity: 1;
 }
 
+.box-image--priority img {
+  transition: opacity 0.2s ease;
+}
+
+.box-image--priority:not(.box-image--loaded) img {
+  opacity: 0;
+}
+
 .insight-image .box-image,
 .profile-photo-frame > .box-image,
 .profile-photo-link.profile-photo-frame > .box-image {

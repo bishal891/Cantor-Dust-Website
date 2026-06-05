@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import BoxImage from '../components/BoxImage';
 import SectionHeading from '../components/SectionHeading';
 import { annotationSteps, physicalAiIntro } from '../data/siteData';
 import { media } from '../data/wixMedia';
+
+const physicalImageUrls = [
+  media.physicalAnnotation,
+  media.physicalAnnotationExample,
+];
 
 const annotationIcons = [
   <svg key="seg" viewBox="0 0 24 24" width="36" height="36" fill="var(--color-accent)" aria-hidden="true">
@@ -25,6 +31,26 @@ const annotationIcons = [
 ];
 
 export default function PhysicalAI() {
+  useEffect(() => {
+    const links = physicalImageUrls.map((href) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = href;
+      document.head.appendChild(link);
+      return link;
+    });
+
+    physicalImageUrls.forEach((href) => {
+      const img = new Image();
+      img.src = href;
+    });
+
+    return () => {
+      links.forEach((link) => link.remove());
+    };
+  }, []);
+
   return (
     <div className="physical-ai-page">
       <section className="section section-dark physical-intro">
@@ -35,7 +61,7 @@ export default function PhysicalAI() {
               <BoxImage
                 src={media.physicalAnnotation}
                 alt="Annotation workflow"
-                loading="eager"
+                priority
               />
             </div>
           </div>
@@ -80,11 +106,11 @@ export default function PhysicalAI() {
       <section className="section section-gradient physical-example">
         <div className="container">
           <h2 className="physical-section-title fade-up">Annotation Example</h2>
-          <div className="physical-example-media fade-up delay-1">
+          <div className="physical-example-media fade-up">
             <BoxImage
               src={media.physicalAnnotationExample}
               alt="Annotation example diagram"
-              loading="lazy"
+              priority
             />
           </div>
         </div>
