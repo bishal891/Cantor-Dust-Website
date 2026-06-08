@@ -192,6 +192,7 @@ function AboutSection({ section }) {
 export default function About() {
   return (
     <div className="about-page">
+      <h1 className="sr-only">About Cantor Dust</h1>
       {aboutCategories.map((category) =>
         category.sections.map((section, index) => (
           <AboutSection key={`${category.id}-${index}`} section={section} />
