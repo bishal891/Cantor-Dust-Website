@@ -6,8 +6,8 @@
   --color-text: #ffffff;
   --color-text-muted: #b0b0b0;
   --color-border: rgba(255, 255, 255, 0.15);
-  --font-body: 'Inter', sans-serif;
-  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Avenir', 'Avenir Next', 'Avenir Next LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: 'Avenir', 'Avenir Next', 'Avenir Next LT Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --logo-height: clamp(110px, 20vw, 158px);
   --logo-block-height: calc(var(--logo-height) + 1.75rem + env(safe-area-inset-top, 0px));
   --menu-bar-height: 52px;
